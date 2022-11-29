@@ -1,0 +1,50 @@
+Create Table Edző_eredmény(
+Eredmény_ID int Primary Key,
+VB int,
+EB int,
+OB int);
+
+Create Table Vezetőedző(
+Edző_ID int Primary Key,
+Név char(20),
+Kor int,
+Fizetés int,
+Pályafutás_kezdete int,
+Nevelőegyesület char(30),
+Legjobb_eredmény int References Edző_eredmény(Eredmény_ID));
+
+Create Table Szponzor(
+Sponz_ID int Primary Key,
+név char(20),
+Típus char(20),
+Elvárás char(30),
+Szerződés_vége int);
+
+Create Table Szakág(
+Szak_ID int Primary Key,
+Vezető char(20),
+Alapítás int,
+Sportág char(20),
+Edző_ID int References Vezetőedző(Edző_ID));
+
+Create Table Támogatás(
+Összeg int,
+Egyéb char(30),
+Szak_ID int References Szakág(Szak_ID),
+Sponz_ID int References Szponzor(Sponz_ID));
+
+Create Table Sportoló(
+Sportoló_ID int Primary key,
+Név char(20),
+Kor int,
+Fizetés int,
+Nevelőegyesület char(30),
+Szak_ID int References Szakág(Szak_ID));
+
+Create Table Felszerelés(
+Név char(20),
+Méret char(5),
+Típus char(20),
+Ár int,
+Darab int,
+Sportoló_ID int References Sportoló(Sportoló_ID));

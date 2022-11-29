@@ -1,0 +1,7 @@
+Felszerelés[Név,Méret,Típus,Ár,Darab,Sportoló_ID]
+Sportoló[Sportoló_ID,Név,Kor,Fizetés,Nevelőegyesület,Szak_ID]
+Szakág[Szak_ID,Vezető,Alapítás,Sportág,Edző_ID]
+Támogatás[Összeg,Egyéb,Szak_ID,Sponz_ID]
+Szponzor[Sponz_ID,Név,Típus,Elvárás,Szerződés_vége]
+Vezetőedző[Edző_ID,Név,Kor,Fizetés,Pályafutás_kezdete,Nevelőegyesület,Legjobb eredmény]
+Edző_eredmény[Eredmény_ID,Eredmény]

@@ -1,0 +1,10 @@
+1.Select Sportág from szakág;
+2.Select Count(Név) as Felszerelés from felszerelés;
+3.Select Név,VB From vezetőedző,edző_eredmény where VB is not null order by VB asc Limit 1;
+4.Select Sum(Fizetés) as Összfizetés From sportoló;
+5.Select sportoló.név From felszerelés,sportoló order by felszerelés.ár desc Limit 1 ;
+6.Select szponzor.név,szakág.sportág from szakág inner join támogatás on szakág.szak_id=támogatás.szak_id inner join szponzor on támogatás.sponz_id=szponzor.sponz_id;
+7.Select (Sum(vezetőedző.fizetés) + Sum(sportoló.fizetés) + Sum(felszerelés.ár)) as költségvetés from vezetőedző,sportoló,felszerelés;
+8.Select felszerelés.méret,sportoló.név from felszerelés inner join sportoló on felszerelés.sportoló_id=sportoló.sportoló_id where felszerelés.méret='xs' group by sportoló.név; 
+9.Select támogatás.összeg,szakág.vezető from támogatás inner join szakág on támogatás.szak_id=szakág.szak_id group by szakág.vezető having Sum(támogatás.összeg)>200000000;
+10.Select min(sportoló.kor) as kor,sportoló.név from sportoló;
